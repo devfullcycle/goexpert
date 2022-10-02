@@ -1,0 +1,21 @@
+{{ template "header.html"}}
+<h1>Cursos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Horas</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{ range . }}
+                {{ if eq .CargaHoraria 40 }}
+                    <tr>
+                        <td>{{ .Nome }}</td>
+                        <td>{{ .CargaHoraria }}</td>
+                    </tr>
+                {{ end }}
+            {{ end }}
+        </tbody>
+    </table>
+{{ template "footer.html"}}
