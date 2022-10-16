@@ -1,0 +1,18 @@
+POST http://localhost:8000/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "j@j.com",
+    "password": "123456"
+}
+
+###
+
+POST http://localhost:8000/users/generate_token HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "j@j.com",
+    "password": "123456"
+}
