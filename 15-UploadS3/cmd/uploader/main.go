@@ -80,7 +80,15 @@ func uploadFile(filename string, uploadControl <-chan struct{}, errorFileUpload 
 	if err != nil {
 		fmt.Printf("Error opening file %s\n", completeFileName)
 		<-uploadControl // esvazia o canal
+<<<<<<< HEAD
 		errorFileUpload <- filename
+=======
+<<<<<<< HEAD
+		errorFileUpload <- completeFileName
+=======
+		errorFileUpload <- filename
+>>>>>>> d86f2c7 (Capitulo 15)
+>>>>>>> 07cc150
 		return
 	}
 	defer f.Close()
@@ -92,7 +100,15 @@ func uploadFile(filename string, uploadControl <-chan struct{}, errorFileUpload 
 	if err != nil {
 		fmt.Printf("Error uploading file %s\n", completeFileName)
 		<-uploadControl // esvazia o canal
+<<<<<<< HEAD
 		errorFileUpload <- filename
+=======
+<<<<<<< HEAD
+		errorFileUpload <- completeFileName
+=======
+		errorFileUpload <- filename
+>>>>>>> d86f2c7 (Capitulo 15)
+>>>>>>> 07cc150
 		return
 	}
 	fmt.Printf("File %s uploaded successfully\n", completeFileName)
