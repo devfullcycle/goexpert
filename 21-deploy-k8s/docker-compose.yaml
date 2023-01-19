@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  goapp:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+    
