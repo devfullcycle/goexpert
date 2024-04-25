@@ -1,0 +1,13 @@
+GET http://localhost:9000/books/2
+###
+
+POST http://localhost:9000/books/1
+
+###
+GET http://localhost:9000/books/dir/djdjdjd/aa/add/dddre/gfgf
+
+###
+GET http://localhost:9000/books/aaaa
+
+###
+GET http://localhost:9000/books/precedence/xxx
