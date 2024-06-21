@@ -66,7 +66,7 @@ func (h *ProductHandler) CreateProduct(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusCreated)
 }
 
-// ListAccounts godoc
+// List Products godoc
 // @Summary      List products
 // @Description  get all products
 // @Tags         products
