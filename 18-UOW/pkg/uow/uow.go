@@ -12,7 +12,7 @@ type RepositoryFactory func(tx *sql.Tx) interface{}
 type UowInterface interface {
 	Register(name string, fc RepositoryFactory)
 	GetRepository(ctx context.Context, name string) (interface{}, error)
-	Do(ctx context.Context, fn func(uow *Uow) error) error
+	Do(ctx context.Context, fn func(uow UowInterface) error) error
 	CommitOrRollback() error
 	Rollback() error
 	UnRegister(name string)
@@ -51,7 +51,7 @@ func (u *Uow) GetRepository(ctx context.Context, name string) (interface{}, erro
 	return repo, nil
 }
 
-func (u *Uow) Do(ctx context.Context, fn func(Uow *Uow) error) error {
+func (u *Uow) Do(ctx context.Context, fn func(Uow UowInterface) error) error {
 	if u.Tx != nil {
 		return fmt.Errorf("transaction already started")
 	}

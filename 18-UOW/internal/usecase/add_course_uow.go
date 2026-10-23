@@ -25,7 +25,7 @@ func NewAddCourseUseCaseUow(uow uow.UowInterface) *AddCourseUseCaseUow {
 }
 
 func (a *AddCourseUseCaseUow) Execute(ctx context.Context, input InputUseCase) error {
-	return a.Uow.Do(ctx, func(uow *uow.Uow) error {
+	return a.Uow.Do(ctx, func(uow uow.UowInterface) error {
 		category := entity.Category{
 			Name: input.CategoryName,
 		}
